@@ -25,6 +25,7 @@ for i in range(2,len(graf)-1):
         g.write("NFA")
         g.write("\n")
         nfa=True
+        break
 
 
 def DEI(graf, cuvant, finale, curent):
@@ -35,7 +36,7 @@ def DEI(graf, cuvant, finale, curent):
                 if i+1 != len(cuvant):
                     DEI(graf, cuvant[(i+1):], finale, graf[j][2])
                 else:
-                    if curent in finale and ok == 0:
+                    if graf[j][2] in finale and ok == 0:
                         ok = 1
 
 if nfa==False:
